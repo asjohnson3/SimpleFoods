@@ -4,14 +4,14 @@ const Form = props => (
   <form>
     <div className="form-group">
       <label htmlFor="Query">
-        <strong>Book</strong>
+        <strong>Ingredients</strong>
       </label>
       <input
         className="form-control"
         id="Title"
         type="text"
         value={props.q}
-        placeholder="Ready Player One"
+        placeholder="Chicken, Lettuce, Tomato"
         name="q"
         onChange={props.handleInputChange}
         required

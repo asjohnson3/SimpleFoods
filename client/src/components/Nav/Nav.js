@@ -65,6 +65,14 @@ class Nav extends Component {
                 Saved
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={window.location.pathname === "/stores" ? "nav-link active" : "nav-link"}
+                to="/stores"
+              >
+                Stores
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

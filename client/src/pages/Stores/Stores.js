@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import Jumbotron from "../../components/Jumbotron";
 import Card from "../../components/Card";
 // import Book from "../../components/Book";
+import GoogleSearch from "../../components/GoogleSearch";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
@@ -37,7 +38,13 @@ class Saved extends Component {
       <Container>
         <Row>
           <Col size="md-12">
-
+            <Card title="Grocery Store Search" icon="far fa-maps">
+                <GoogleSearch
+                    handleInputChange={this.handleInputChange}
+                    // handleFormSubmit={this.handleFormSubmit}
+                    // q={this.state.q}
+                />
+            </Card>
           </Col>
         </Row>
         <Row>

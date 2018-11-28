@@ -7,4 +7,14 @@
     background-attachment: fixed;
     /* color: white; */
   }
+
+h1 {
+  font-size: 50px;
+  color: #5cb85c;
+}
+
+h2 {
+  font-size: 30px;
+  color: #5cb85c;
+}
   

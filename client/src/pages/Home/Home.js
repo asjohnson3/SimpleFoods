@@ -47,13 +47,14 @@ class Home extends Component {
     const book = this.state.books.find(book => book.id === id);
 
     API.saveBook({
-      googleId: book.id,
-      title: book.volumeInfo.title,
-      subtitle: book.volumeInfo.subtitle,
-      link: book.volumeInfo.infoLink,
-      authors: book.volumeInfo.authors,
-      description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks.thumbnail
+      googleId: book.recipe.uri,
+      title: book.recipe.label,
+      subtitle: book.recipe.calories,
+      link: book.recipe.url,
+      authors: book.recipe.source,
+      description: book.recipe.ingredientLines.join(", "),
+      image: book.recipe.image
+
     }).then(() => this.getBooks());
   };
 
@@ -86,12 +87,12 @@ class Home extends Component {
                 <List>
                   {this.state.books.map(book => (
                     <Book
-                      key={book.id}
+                      key={book.recipe.uri}
                       title={book.recipe.label}
                       subtitle={book.recipe.calories}
                       link={book.recipe.url}
-                      authors={book.recipe.ingredientLines.join(", ")}
-                      description={book.recipe.source}
+                      authors={book.recipe.source}
+                      description={book.recipe.ingredientLines.join(", ")}
                       image={book.recipe.image}
                       Button={() => (
                         <button

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-import "./components/Background.css";
+import "./components/Style.css";
 
 const App = () => (
   <Router>

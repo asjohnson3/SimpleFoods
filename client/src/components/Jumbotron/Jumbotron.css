@@ -1,4 +1,9 @@
 .jumbotron {
   padding: 100px;
   background: none;
+  /* color: white; */
+}
+
+h1 {
+  font-size: 30px;
 }

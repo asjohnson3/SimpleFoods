@@ -44,7 +44,7 @@ class Home extends Component {
   };
 
   handleBookSave = id => {
-    const book = this.state.books.find(book => book.id === id);
+    const book = this.state.books.find(book => book.recipe.uri === id);
 
     API.saveBook({
       googleId: book.recipe.uri,
@@ -96,7 +96,7 @@ class Home extends Component {
                       image={book.recipe.image}
                       Button={() => (
                         <button
-                          onClick={() => this.handleBookSave(book.id)}
+                          onClick={() => this.handleBookSave(book.recipe.uri)}
                           className="btn btn-primary ml-2"
                         >
                           Save

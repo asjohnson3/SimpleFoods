@@ -7,13 +7,12 @@ import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List } from "../../components/List";
-import "./Home.css";
 
 class Home extends Component {
   state = {
-    books: [],
+    ingredients: [],
     q: "",
-    message: "Search Your Ingredients To Begin!"
+    message: "Type your Ingredients In!"
   };
 
   handleInputChange = event => {
@@ -21,42 +20,43 @@ class Home extends Component {
     this.setState({
       [name]: value
     });
+    console.log(event);
   };
 
-  getBooks = () => {
-    API.getBooks(this.state.q)
-      .then(res => {
-        this.setState({books: res.data});
-        console.log(this.state.books);
-      }
+//   getIngredients = () => {
+//     API.getIngredients(this.state.q)
+//       .then(res => {
+//         this.setState({ingredients: res.data});
+//         console.log(this.state.ingredients);
+//       }
 
-      )
-      .catch(() =>
-        this.setState({
-          books: [],
-          message: "No Recipes Were Found, Try different Ingredient Combination"
-        })
-      );
-  };
+//       )
+//       .catch(() =>
+//         this.setState({
+//           ingredients: [],
+//           message: "No Recipes Were Found, Try different Ingredient Combination"
+//         })
+//       );
+//   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    this.getBooks();
+    // this.getIngredients();
+    console.log(this.state.q);
+    this.setState({ingredients:this.state.q});
+    console.log(this.state.ingredients);
+    this.handleIngredientSave();
   };
 
-  handleBookSave = id => {
-    const book = this.state.books.find(book => book.recipe.uri === id);
-
-    API.saveBook({
-      googleId: book.recipe.uri,
-      title: book.recipe.label,
-      subtitle: book.recipe.calories,
-      link: book.recipe.url,
-      authors: book.recipe.source,
-      description: book.recipe.ingredientLines.join(", "),
-      image: book.recipe.image
-
-    }).then(() => this.getBooks());
+  handleIngredientSave = id => {
+    // const book = this.state.ingredients.find(book => book.recipe.uri === id);
+    // const ingredient = this.state.ingredients.find(ingredient => this.state.q === id);
+    const ingredient = this.state.q
+    API.saveIngredient({
+      name: ingredient,
+      Id: ingredient
+    }).then(() => console.log(this.state.q, ingredient))
+    // .then(() => this.getIngredients());
   };
 
   render() {
@@ -73,7 +73,8 @@ class Home extends Component {
               <Form
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                q={this.state.q}
+                // handleIngredientSave={this.handleIngredientSave}
+                // q={this.state.q}
               />
             {/* </Card> */}
             </Jumbotron>
@@ -88,20 +89,20 @@ class Home extends Component {
             </Card>
           </Col> */}
         </Row>
-        <Row>
+        {/* <Row>
           <Col size="md-12">
             <Card title="Results" style="width:1000px">
-              {this.state.books.length ? (
+              {this.state.ingredients.length ? (
                 <List>
-                  {this.state.books.map(book => (
+                  {this.state.ingredients.map(book => (
                     <Book
                       key={book.recipe.uri}
                       title={book.recipe.label}
-                      subtitle={book.recipe.calories}
-                      link={book.recipe.url}
-                      authors={book.recipe.source}
-                      description={book.recipe.ingredientLines.join(", ")}
-                      image={book.recipe.image}
+                    //   subtitle={book.recipe.calories}
+                    //   link={book.recipe.url}
+                    //   authors={book.recipe.source}
+                    //   description={book.recipe.ingredientLines.join(", ")}
+                    //   image={book.recipe.image}
                       Button={() => (
                         <button
                           onClick={() => this.handleBookSave(book.recipe.uri)}
@@ -118,7 +119,7 @@ class Home extends Component {
               )}
             </Card>
           </Col>
-        </Row>
+        </Row> */}
         <Footer />
       </Container>
     );

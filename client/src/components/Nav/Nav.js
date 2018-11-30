@@ -62,7 +62,7 @@ class Nav extends Component {
                 className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
                 to="/saved"
               >
-                Saved
+                Recipes
               </Link>
             </li>
             <li className="nav-item">
@@ -71,6 +71,14 @@ class Nav extends Component {
                 to="/stores"
               >
                 Stores
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className={window.location.pathname === "/pantry" ? "nav-link active" : "nav-link"}
+                to="/pantry"
+              >
+                Pantry
               </Link>
             </li>
           </ul>

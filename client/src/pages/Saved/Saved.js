@@ -33,7 +33,7 @@ class Saved extends Component {
   render() {
     return (
       <Container>
-        <Row>
+        {/* <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1 className="text-center">
@@ -42,10 +42,10 @@ class Saved extends Component {
               <h2 className="text-center">Search over one million recipes for your right meal!</h2>
             </Jumbotron>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col size="md-12">
-            <Card title="Saved Books" icon="download">
+            <Card title="Saved Recipes" icon="download">
               {this.state.books.length ? (
                 <List>
                   {this.state.books.map(book => (
@@ -62,7 +62,7 @@ class Saved extends Component {
                           onClick={() => this.handleBookDelete(book._id)}
                           className="btn btn-danger ml-2"
                         >
-                          Delete
+                          X
                         </button>
                       )}
                     />

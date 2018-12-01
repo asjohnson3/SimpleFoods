@@ -11,7 +11,7 @@ router.use("/books", bookRoutes);
 router.use("/google", googleRoutes);
 
 // Ingredient Routes
-router.use("/ingredient", ingredientRoutes);
+router.use("/ingredients", ingredientRoutes);
 
 // For anything else, render the html page
 router.use(function(req, res) {

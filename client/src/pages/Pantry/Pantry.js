@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import Card from "../../components/Card";
 import Form from "../../components/Form";
-import Book from "../../components/Book";
+import Ingredient from "../../components/Ingredient"
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
@@ -20,43 +20,49 @@ class Home extends Component {
     this.setState({
       [name]: value
     });
-    console.log(event);
   };
 
-//   getIngredients = () => {
-//     API.getIngredients(this.state.q)
-//       .then(res => {
-//         this.setState({ingredients: res.data});
-//         console.log(this.state.ingredients);
-//       }
+  componentDidMount() {
+    this.getSavedIngredients();
+  }
 
-//       )
-//       .catch(() =>
-//         this.setState({
-//           ingredients: [],
-//           message: "No Recipes Were Found, Try different Ingredient Combination"
-//         })
-//       );
-//   };
+  getSavedIngredients = () => {
+    API.getSavedIngredients()
+      .then(res => {
+        this.setState({
+          ingredients: res.data
+        })
+        console.log(this.state.ingredients);
+      }
+      )
+      .catch(err => console.log(err));
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
     // this.getIngredients();
-    console.log(this.state.q);
-    this.setState({ingredients:this.state.q});
-    console.log(this.state.ingredients);
+    // console.log(this.state.q);
+    // this.setState({ingredients:this.state.q});
+    // console.log(this.state.ingredients);
     this.handleIngredientSave();
+    this.getSavedIngredients();
   };
 
-  handleIngredientSave = id => {
+  handleIngredientSave = () => {
     // const book = this.state.ingredients.find(book => book.recipe.uri === id);
     // const ingredient = this.state.ingredients.find(ingredient => this.state.q === id);
-    const ingredient = this.state.q
+    const ingredient = this.state.q;
+    // console.log("-------------------" + ingredient);
+    // console.log(this.state.q);
     API.saveIngredient({
       name: ingredient,
       Id: ingredient
-    }).then(() => console.log(this.state.q, ingredient))
+    }).then(() => console.log("processed"))
     // .then(() => this.getIngredients());
+  };
+
+  handleIngredientDelete = id => {
+    API.deleteIngredient(id).then(res => this.getSavedIngredients());
   };
 
   render() {
@@ -66,15 +72,15 @@ class Home extends Component {
           <Col size="lg-12">
             <Jumbotron>
               <h1 className="text-center">
-                <strong>Recipe Ingredient Search</strong>
+                <strong>Pantry</strong>
               </h1>
-              <h2 className="text-center">Search over one million recipes for your right meal!</h2>
+              <h2 className="text-center">Add Ingredient to Your Pantry!</h2>
               {/* <Card title="Ingredient Search" icon="far fa-lemon"> */}
               <Form
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 // handleIngredientSave={this.handleIngredientSave}
-                // q={this.state.q}
+                q={this.state.q}
               />
             {/* </Card> */}
             </Jumbotron>
@@ -88,6 +94,32 @@ class Home extends Component {
               />
             </Card>
           </Col> */}
+        </Row>
+        <Row>
+          <Col size="md-12">
+            <Card title="Your Pantry">
+              {this.state.ingredients.length ? (
+                <List>
+                  {this.state.ingredients.map(ingredient => (
+                    <Ingredient
+                      key={ingredient.Id}
+                      title={ingredient.name}
+                      Button={() => (
+                        <button
+                          onClick={() => this.handleIngredientDelete(ingredient.Id)}
+                          className="btn btn-danger ml-2"
+                        >
+                          X
+                        </button>
+                      )}
+                    />
+                  ))}
+                </List>
+              ) : (
+                <h2 className="text-center">No Saved Recipes</h2>
+              )}
+            </Card>
+          </Col>
         </Row>
         {/* <Row>
           <Col size="md-12">

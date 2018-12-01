@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const ingredientController = require("../../controllers/ingredientController");
-
+console.log("hello");
 // Matches with "/api/ingredients"
 router.route("/")
   .get(ingredientController.findAll)
@@ -13,4 +13,4 @@ router
   .put(ingredientController.update)
   .delete(ingredientController.remove);
 
-module.exports = router;
+module.exports = router; 

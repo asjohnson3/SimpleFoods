@@ -15,6 +15,7 @@ export default {
   },
   // Saves a recipe to the database
   saveBook: function(bookData) {
+    console.log(bookData);
     return axios.post("/api/books", bookData);
   },
   // Gets all saved ingredients
@@ -23,10 +24,15 @@ export default {
   },
   // Deletes the saved ingredients with the given id
   deleteIngredient: function(id) {
+    console.log(id);
+    console.log("--------");
     return axios.delete("/api/ingredients/" + id);
   },
   // Saves an ingredient to the database
-  saveIngredient: function(ingredient) {
-    return axios.post("/api/ingredients", ingredient)
+  saveIngredient: function(ingredientData) {
+    console.log(ingredientData);
+    console.log("--------------");
+    return axios.post("/api/ingredients", ingredientData);
   }
 };
+ 

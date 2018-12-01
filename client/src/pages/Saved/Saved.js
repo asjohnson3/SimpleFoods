@@ -40,7 +40,7 @@ class Saved extends Component {
                 <strong>Recipe Ingredient Search</strong>
               </h1>
               <h2 className="text-center">Search over one million recipes for your right meal!</h2>
-            </Jumbotron>
+            </Jumbotron> 
           </Col>
         </Row> */}
         <Row>

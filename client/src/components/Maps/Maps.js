@@ -8,8 +8,8 @@
 // class SimpleMap extends Component {
 //   static defaultProps = {
 //     center: {
-//       lat: 40.7359,
-//       lng: -73.9911
+//       lat: 40.8075,
+//       lng: -73.9626
 //     },
 //     zoom: 17,
 //     type:['lodging']
@@ -82,12 +82,12 @@
 //                 google = { this.props.google }
 //                 onClick = { this.onMapClick }
 //                 zoom = { 14 }
-//                 initialCenter = {{ lat: 40.7359, lng: -73.9911 }}
+//                 initialCenter = {{ lat: 40.8075, lng: -73.9626 }}
 //             >
 //                 <Marker
 //                 onClick = { this.onMarkerClick }
 //                 title = { 'Changing Colors Garage' }
-//                 position = {{ lat: 40.7359, lng: -73.9911 }}
+//                 position = {{ lat: 40.8075, lng: -73.9626 }}
 //                 name = { 'Changing Colors Garage' }
 //                 />
 //                 <InfoWindow
@@ -167,13 +167,13 @@ const MyMapComponent = compose(
             ref={props.onMapMounted}
             onBoundsChanged={props.fetchPlaces}
             defaultZoom={16}
-            defaultCenter={{ lat: 40.7359, lng: -73.9911 }}
+            defaultCenter={{ lat: 40.8075, lng: -73.9626 }}
         >
             {props.places && props.places.map((place, i) =>
                 <Marker key={i} position={{ lat: place.geometry.location.lat(), lng: place.geometry.location.lng() }} />
             )}
             <Marker
-      position={{ lat: 40.7359, lng: -73.9911 }}
+      position={{ lat: 40.8075, lng: -73.9626 }}
       onClick={props.onToggleOpen}
     >
       {/* {props.isOpen && <InfoBox

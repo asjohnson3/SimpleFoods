@@ -32,5 +32,8 @@
     "mongoose": "^5.3.14",
     "react-google-maps": "^9.4.5",
     "recompose": "^0.30.0"
+  },
+  "resolutions": {
+    "**/event-stream": "^4.0.1"
   }
 }

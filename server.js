@@ -16,14 +16,18 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true
-  }
-);
+// // Connect to the Mongo DB
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
+//   {
+//     useCreateIndex: true,
+//     useNewUrlParser: true
+//   }
+// );
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+
+mongoose.connect(MONGODB_URI);
 
 // Start the API server
 app.listen(PORT, () =>

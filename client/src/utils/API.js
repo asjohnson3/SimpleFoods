@@ -1,5 +1,5 @@
 import axios from "axios";
-
+ 
 export default {
   // Gets books from the Google API
   getBooks: function(q) {
@@ -11,6 +11,7 @@ export default {
   },
   // Deletes the saved recipe with the given id
   deleteBook: function(id) {
+    console.log("API.js: " + id);
     return axios.delete("/api/books/" + id);
   },
   // Saves a recipe to the database
@@ -24,8 +25,7 @@ export default {
   },
   // Deletes the saved ingredients with the given id
   deleteIngredient: function(id) {
-    console.log(id);
-    console.log("--------");
+    console.log("API.js: " + id);
     return axios.delete("/api/ingredients/" + id);
   },
   // Saves an ingredient to the database
@@ -35,4 +35,4 @@ export default {
     return axios.post("/api/ingredients", ingredientData);
   }
 };
- 
+  

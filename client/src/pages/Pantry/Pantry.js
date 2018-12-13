@@ -106,7 +106,7 @@ class Home extends Component {
                       title={ingredient.name}
                       Button={() => (
                         <button
-                          onClick={() => this.handleIngredientDelete(ingredient.Id)}
+                          onClick={() => this.handleIngredientDelete(ingredient._id)}
                           className="btn btn-danger ml-2"
                         >
                           X

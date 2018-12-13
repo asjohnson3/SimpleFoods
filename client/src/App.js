@@ -5,13 +5,17 @@ import Saved from "./pages/Saved";
 import Stores from "./pages/Stores";
 import Pantry from "./pages/Pantry";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 import "./components/Style.css";
+import Header from "./components/Header";
+import PageLinks from "./components/PageLinks";
 
 const App = () => (
   <Router>
     <div className = "full">
-      <Nav />
+      <Header />
+      {/* <Nav /> */}
+      <PageLinks />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/saved" component={Saved} />

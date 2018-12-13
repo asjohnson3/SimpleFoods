@@ -1,8 +1,9 @@
 .navbar {
   border-radius: 0;
-  background-color: #5cb85c;
+  /* background-color: #5cb85c; */
 }
 
 nav {
-  background-color: #5cb85c;
+  background-color: white;
+  margin: auto;
 }

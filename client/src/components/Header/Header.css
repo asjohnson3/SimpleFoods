@@ -1,0 +1,40 @@
+.header {
+    background: white;
+    font-size: 40px;
+    color: black;
+}
+
+
+/* .links {
+    margin: 75px;
+    color: #505050;
+} */
+
+/* .title-name {
+    border-bottom: 2px solid #DCDCDC;
+} */
+
+.left {
+    float: left;
+    width: 33.33333%;
+    text-align: left;
+}
+
+.center {
+    float: left;
+    width: 33.33333%;
+    text-align: center;
+}
+
+.right {
+    float: left;
+    width: 33.33333%;
+    text-align: right;
+    font-size: 10px;
+    height: 30px;
+}
+
+img {
+    height: 30px;
+    margin-left: 20px
+}

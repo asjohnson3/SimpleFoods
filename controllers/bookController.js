@@ -3,6 +3,7 @@ const db = require("../models");
 // Defining methods for the bookController
 module.exports = {
   findAll: function(req, res) {
+    console.log("Rendering Saved Recipes working")
     db.Book.find(req.query)
       .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));
@@ -13,6 +14,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log("this db recipe create is working");
     db.Book.create(req.body)
       .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));

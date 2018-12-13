@@ -1,5 +1,4 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -24,10 +23,16 @@ app.use(routes);
 //     useNewUrlParser: true
 //   }
 // );
+ 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI,
+  {
+    useCreateIndex: true,
+    useNewUrlParser: true
+  }
+);
 
 // Start the API server
 app.listen(PORT, () =>

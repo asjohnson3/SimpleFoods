@@ -1,0 +1,13 @@
+.pages {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /* border-top: 2px solid #DCDCDC; */
+    background: white;
+}
+
+.links {
+    margin: 75px;
+    color: #505050;
+}

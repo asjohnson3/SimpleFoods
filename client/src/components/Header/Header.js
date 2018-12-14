@@ -71,8 +71,8 @@ const Header = () => (
 
     <div className="title-name right">
       <div className="right-text">
-        <button type="button" class="btn btn-secondary signIn">Sign In</button>
-        <button type="button" class="btn btn-secondary newUser">New Account</button>
+        <button type="button" class="btn btn-light signIn">Sign In</button>
+        <button type="button" class="btn btn-light newUser">New Account</button>
       </div>
     </div>
 

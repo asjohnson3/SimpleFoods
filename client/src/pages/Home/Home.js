@@ -7,6 +7,7 @@ import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List } from "../../components/List";
+import RecipeList from "../../components/RecipeList";
 import "./Home.css";
 
 class Home extends Component {
@@ -61,6 +62,7 @@ class Home extends Component {
 
   render() {
     return (
+      <div className="searchArea">
       <Container>
         <Row>
           <Col size="lg-12">
@@ -121,6 +123,8 @@ class Home extends Component {
         </Row>
         <Footer />
       </Container>
+       <RecipeList />
+       </div>
     );
   }
 }

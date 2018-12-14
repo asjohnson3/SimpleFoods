@@ -1,3 +1,11 @@
 body {
     font-family: "Didot 06 A", "Didot 06 B", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
 }
+
+.searchArea {
+    background-image: url("https://image.freepik.com/free-photo/italian-pasta-ingredients-on-white-background-with-space-for-text_23-2147925938.jpg");
+    
+    background-repeat: no-repeat;
+
+    background-size: 100%;
+}

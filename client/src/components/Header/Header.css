@@ -1,18 +1,27 @@
-.header {
-    background: white;
-    font-size: 40px;
+.pageHeader {
+    background-color: white;
+    font-size: 50px;
     color: black;
 }
 
+.pages {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    border-bottom: 2px solid black 
+}
 
-/* .links {
-    margin: 75px;
+.links {
+    margin: 100px;
     color: #505050;
-} */
+}
 
-/* .title-name {
-    border-bottom: 2px solid #DCDCDC;
-} */
+.title-name {
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
 
 .left {
     float: left;
@@ -24,17 +33,28 @@
     float: left;
     width: 33.33333%;
     text-align: center;
+    /* border-top: 1px solid black; */
+    /* border-bottom: 1px solid black; */
+    margin-top: 0;
 }
 
 .right {
     float: left;
     width: 33.33333%;
     text-align: right;
-    font-size: 10px;
-    height: 30px;
+    height: auto;
+    /* height: 62px; */
 }
 
 img {
     height: 30px;
     margin-left: 20px
+}
+
+a {
+    padding-top: 10px;
+}
+
+.btn-secondary {
+    margin-right: 20px;
 }

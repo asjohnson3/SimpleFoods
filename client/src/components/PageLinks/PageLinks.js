@@ -5,6 +5,7 @@ import "./PageLinks.css";
 const PageLinks = () => (
 
     <div className="pages">
+    
         <Link to="/" className='links'>
           Search
         </Link>

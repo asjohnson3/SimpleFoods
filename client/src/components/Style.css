@@ -2,9 +2,16 @@
     /* min-height: 500px; */
     width: 100%;
     /* padding-top: 100px; */
-    background-image: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg");
-    background-repeat: none;
+
+    /* background-image: url("https://foodrevolution.org/wp-content/uploads/2018/03/blog-featured_healthy_foods-20180306.jpg"); */
+
+    /* background-image: url("https://image.freepik.com/free-photo/wooden-board-empty-table-top-on-of-blurred-background_1253-1584.jpg"); */
+
+    background-image: url("https://image.freepik.com/free-photo/italian-pasta-ingredients-on-white-background-with-space-for-text_23-2147925938.jpg");
+    
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: 100%;
     /* color: white; */
   }
 

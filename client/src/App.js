@@ -8,14 +8,14 @@ import NoMatch from "./pages/NoMatch";
 // import Nav from "./components/Nav";
 import "./components/Style.css";
 import Header from "./components/Header";
-import PageLinks from "./components/PageLinks";
+// import PageLinks from "./components/PageLinks";
 
 const App = () => (
   <Router>
     <div className = "full">
       <Header />
       {/* <Nav /> */}
-      <PageLinks />
+      {/* <PageLinks /> */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/saved" component={Saved} />

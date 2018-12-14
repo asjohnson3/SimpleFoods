@@ -1,0 +1,21 @@
+.form-group {
+    display: block;
+    /* width: 100%; */
+    margin: auto;
+}
+
+.pull-right {
+    display: block;
+    /* margin: auto; */
+    padding-left: 0px;
+    
+}
+
+.searchCol {
+    padding-left: 0px;
+}
+
+.btn-success {
+    padding-left: 15px;
+    padding-right: 15px;
+}

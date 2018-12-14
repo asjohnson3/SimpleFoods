@@ -1,11 +1,16 @@
 import React from "react";
+import "./Form.css";
+import { Container, Row, Col } from 'reactstrap';
 
 const Form = props => (
   <form>
-    <div className="form-group">
-      <label htmlFor="Query">
+    <Container>
+    <label htmlFor="Query">
         <strong>Ingredients</strong>
       </label>
+      <Row>
+        <Col>
+        <div className="form-group">
       <input
         className="form-control"
         id="Title"
@@ -17,15 +22,23 @@ const Form = props => (
         required
       />
     </div>
-    <div className="pull-right">
+        </Col>
+        <Col xs="auto" className="searchCol">
+        <div className="pull-right">
       <button
         onClick={props.handleFormSubmit}
         type="submit"
-        className="btn btn-lg btn-success float-right"
+        className="btn btn-md btn-success float-right"
       >
         Search
       </button>
     </div>
+        </Col>
+      </Row>
+    </Container>
+
+
+
   </form>
 );
 

@@ -7,6 +7,7 @@ import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List } from "../../components/List";
+import "./Pantry.css"
 
 class Home extends Component {
   state = {
@@ -75,25 +76,13 @@ class Home extends Component {
                 <strong>Pantry</strong>
               </h1>
               <h2 className="text-center">Add Ingredient to Your Pantry!</h2>
-              {/* <Card title="Ingredient Search" icon="far fa-lemon"> */}
               <Form
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                // handleIngredientSave={this.handleIngredientSave}
                 q={this.state.q}
               />
-            {/* </Card> */}
             </Jumbotron>
           </Col>
-          {/* <Col size="md-12">
-            <Card title="Ingredient Search" icon="far fa-lemon">
-              <Form
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
-                q={this.state.q}
-              />
-            </Card>
-          </Col> */}
         </Row>
         <Row>
           <Col size="md-12">

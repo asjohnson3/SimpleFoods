@@ -123,7 +123,7 @@ class Home extends Component {
         </Row>
         <Footer />
       </Container>
-       <RecipeList />
+       {/* <RecipeList /> */}
        </div>
     );
   }
